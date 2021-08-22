@@ -40,7 +40,7 @@ nav {
   display: flex;
 }
 
-.resultContainer p {
+.paraVisible {
   visibility: hidden;
 }
 

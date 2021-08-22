@@ -20,17 +20,19 @@
             <h1>BMI Calculator</h1>
             <div class="inputs">
                 <div class="inputContainer">
-                    <input type="number" name="weight" id="weight">
+                    <h2>weight</h2>
+                    <input type="number" name="weight" id="weight" placeholder="exemple : 75 kg">
                     <span id="weightSpan"></span>    
                 </div>
                 <div class="inputContainer">
-                    <input type="number" name="size" id="size">
+                    <h2>size</h2>
+                    <input type="number" name="size" id="size" placeholder="exemple : 180 cm">
                     <span id="sizeSpan"></span>    
                 </div>
-                <input type="button" value="Calculate">
+                <input type="button" value="Calculate" id="btn">
             </div>
             <div class="resultContainer">
-                <p>bmi is</p>
+                <p id="paraResult" class="paraVisible">bmi is</p>
                 <div class="BMIResult"></div>
             </div>
         </main>
