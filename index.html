@@ -10,32 +10,38 @@
 <title>BMI</title>
 </head>
     <body>
+        <nav>
+            <div class="flag"></div>
+            <div class="flag"></div>
+            <div class="flag"></div>
+            <div class="flag"></div>
+        </nav>
         <main>
-            <nav>
-                <div class="flag"></div>
-                <div class="flag"></div>
-                <div class="flag"></div>
-                <div class="flag"></div>
-            </nav>
-            <h1>BMI Calculator</h1>
             <div class="inputs">
+                <h1>BMI Calculator</h1>
                 <div class="inputContainer">
                     <div class="inputContainer-input">
                         <label for="weight">Your weight :</label>
-                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="weight" id="weight" placeholder="exemple : 75 kg">
-                        <p>kg</p>
+                    <div class="inputContainer-input-input">
+                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="weight" id="weight" placeholder="75">
+                        <p class="input-para">kg</p>
+                    </div>    
                     </div>
-                    <span id="weightSpan"></span>    
+                    <span id="weightSpan" class="errorSpan"></span>    
                 </div>
                 <div class="inputContainer">
                     <div class="inputContainer-input">
                         <label for="size">Your size :</label>
-                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="size" id="size" placeholder="exemple : 75 kg">
-                        <p>cm</p>
+                    <div class="inputContainer-input-input">
+                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="size" id="size" placeholder="180">
+                        <p class="input-para">cm</p>
+                    </div>    
                     </div>
-                    <span id="sizeSpan"></span>    
+                    <span id="sizeSpan" class="errorSpan"></span>    
                 </div>
-                <input type="button" value="Calculate" id="btn">
+                <div class="btnContainer">
+                    <input type="button" value="Calculate" id="btn">
+                </div>
             </div>
             <div id="result" class="resultContainer visible">
                 <div class="resultContainer-result">
@@ -50,9 +56,9 @@
                 </div>
             </div>
         </main>
+        <footer>
+            <p>coded by <a target="_blank" rel="noopener noreferrer" href="https://github.com/julabina" >Lenfumé Julien</a></p>
+        </footer>
         <script src="index.js"></script>
-    <footer>
-        <p>coded by <a target="_blank" rel="noopener noreferrer" href="https://github.com/julabina" >Lenfumé Julien</a></p>
-    </footer>
     </body>
 </html>
