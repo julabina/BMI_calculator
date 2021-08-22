@@ -14,8 +14,10 @@ body {
 footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav {
@@ -34,17 +36,27 @@ nav {
 
 .inputs {
   display: flex;
+  flex-direction: column;
 }
 
-.resultContainer {
-  display: flex;
-}
-
-.paraVisible {
+.visible {
   visibility: hidden;
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
+}
+
+.inputContainer-input {
+  display: flex;
+}
+
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultContainer-result {
+  display: flex;
 }

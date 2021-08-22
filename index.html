@@ -20,20 +20,34 @@
             <h1>BMI Calculator</h1>
             <div class="inputs">
                 <div class="inputContainer">
-                    <h2>weight</h2>
-                    <input type="number" name="weight" id="weight" placeholder="exemple : 75 kg">
+                    <div class="inputContainer-input">
+                        <label for="weight">Your weight :</label>
+                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="weight" id="weight" placeholder="exemple : 75 kg">
+                        <p>kg</p>
+                    </div>
                     <span id="weightSpan"></span>    
                 </div>
                 <div class="inputContainer">
-                    <h2>size</h2>
-                    <input type="number" name="size" id="size" placeholder="exemple : 180 cm">
+                    <div class="inputContainer-input">
+                        <label for="size">Your size :</label>
+                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="size" id="size" placeholder="exemple : 75 kg">
+                        <p>cm</p>
+                    </div>
                     <span id="sizeSpan"></span>    
                 </div>
                 <input type="button" value="Calculate" id="btn">
             </div>
-            <div class="resultContainer">
-                <p id="paraResult" class="paraVisible">bmi is</p>
-                <div class="BMIResult"></div>
+            <div id="result" class="resultContainer visible">
+                <div class="resultContainer-result">
+                    <p>bmi is</p>
+                    <div class="BMIResult"></div>
+                </div>
+                <div class="resultContainer-status">
+                    <div class="BMIStatus"></div>
+                </div>
+                <div class="resultContainer-normal">
+                    <div class="BMINormal"></div>
+                </div>
             </div>
         </main>
         <script src="index.js"></script>
