@@ -7,14 +7,13 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>BMI</title>
+<title>BMI Calculator</title>
 </head>
     <body>
         <nav>
-            <div class="flag"></div>
-            <div class="flag"></div>
-            <div class="flag"></div>
-            <div class="flag"></div>
+            <div class="flagContainer"><a href="#"><img class="flag" src="./image/france.png" alt="France flag"></a></div>
+            <div class="flagContainer"><a href="#"><img class="flag" src="./image/deutchland.png" alt="Deuchland flag"></a></div>
+            <div class="flagContainer"><a href="#"><img class="flag" src="./image/spain.png" alt="Spain flag"></a></div>
         </nav>
         <main>
             <div class="inputs">
@@ -31,13 +30,13 @@
                 </div>
                 <div class="inputContainer">
                     <div class="inputContainer-input">
-                        <label for="size">Your size :</label>
+                        <label for="height">Your height :</label>
                     <div class="inputContainer-input-input">
-                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="size" id="size" placeholder="180">
+                        <input type="text" maxlength="3" pattern="[0-9]{3}" name="height" id="height" placeholder="180">
                         <p class="input-para">cm</p>
                     </div>    
                     </div>
-                    <span id="sizeSpan" class="errorSpan"></span>    
+                    <span id="heightSpan" class="errorSpan"></span>    
                 </div>
                 <div class="btnContainer">
                     <input type="button" value="Calculate" id="btn">
@@ -45,7 +44,7 @@
             </div>
             <div id="result" class="resultContainer visible">
                 <div class="resultContainer-result">
-                    <p>bmi is</p>
+                    <p>Your BMI is</p>
                     <div class="BMIResult"></div>
                 </div>
                 <div class="resultContainer-status">
@@ -54,10 +53,11 @@
                 <div class="resultContainer-normal">
                     <div class="BMINormal"></div>
                 </div>
+                <p>For more info please visit this <a target="_blank" rel="noopener noreferrer" href="https://www.cdc.gov/healthyweight/assessing/index.html">link</a></p>
             </div>
         </main>
         <footer>
-            <p>coded by <a target="_blank" rel="noopener noreferrer" href="https://github.com/julabina" >Lenfumé Julien</a></p>
+            <p>Coded by <a target="_blank" rel="noopener noreferrer" href="https://github.com/julabina" >Lenfumé Julien</a>  -  <a target="_blank" rel="noopener noreferrer" href="https://github.com/julabina/BMI_calculator">Github repository</a>  -  Icon designed by <a target="_blank" rel="noopener noreferrer" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a target="_blank" rel="noopener noreferrer" href="https://www.flaticon.com/fr/" title="Flaticon">www.flaticon.com</a></p>
         </footer>
         <script src="index.js"></script>
     </body>

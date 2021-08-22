@@ -1,6 +1,6 @@
 const weightInput = document.getElementById("weight");
-const sizeInput = document.getElementById("size");
-const inputs = document.querySelectorAll("#weight, #size");
+const heightInput = document.getElementById("height");
+const inputs = document.querySelectorAll("#weight, #height");
 const resultBoxe = document.querySelector(".BMIResult");
 const statusBoxe = document.querySelector(".BMIStatus");
 const normalBoxe = document.querySelector(".BMINormal");
@@ -8,9 +8,9 @@ const resultBtn = document.getElementById("btn");
 const resultContainer = document.getElementById("result");
 
 let weight = 0;
-let size = 0;
+let height = 0;
 let normalHeightHight, normalHeightLow;
-let result, weightValid, sizeValid, sizeSquared;
+let result, weightValid, heightValid, heightSquared;
 let status = "";
 
 const errorDisplay = (tag, message, valid) => {
@@ -28,7 +28,7 @@ const errorDisplay = (tag, message, valid) => {
 
 const emptyValid = () => {
   weightValid = null;
-  sizeValid = null;
+  heightValid = null;
 };
 
 const resetResult = () => {
@@ -41,17 +41,17 @@ const resetResult = () => {
 
 const bmiCalc = () => {
   let firstResult;
-  sizeSquared = sizeValid ** 2;
-  firstResult = weight / sizeSquared;
+  heightSquared = heightValid ** 2;
+  firstResult = weight / heightSquared;
   result = Math.round(firstResult * 10) / 10;
   return result;
 };
 
 const normalHeight = () => {
-  sizeSquared = sizeValid ** 2;
-  normalHeightHightFirst = 24.9 * sizeSquared;
+  heightSquared = heightValid ** 2;
+  normalHeightHightFirst = 24.9 * heightSquared;
   normalHeightHight = Math.round(normalHeightHightFirst);
-  normalHeightLowFirst = 18.5 * sizeSquared;
+  normalHeightLowFirst = 18.5 * heightSquared;
   normalHeightLow = Math.round(normalHeightLowFirst);
 };
 
@@ -60,11 +60,10 @@ const displayBmi = () => {
     <h2>${result}</h2>
     `;
   statusBoxe.innerHTML = `
-  <p>${status}</p>
+  <p>your weight is in the "${status}" category for your height.</p>
   `;
   normalBoxe.innerHTML = `
-  <p>${normalHeightLow}</p>
-  <p>${normalHeightHight}</p>
+  For your height, a normal weight range would be from ${normalHeightLow} kg to ${normalHeightHight} kg.</p>
   `;
   resultContainer.classList.remove("visible");
 };
@@ -76,9 +75,9 @@ const weightInputTake = (value) => {
   return weight;
 };
 
-const sizeInputTake = (value) => {
-  size = value;
-  return size;
+const heightInputTake = (value) => {
+  height = value;
+  return height;
 };
 
 const weightInputCheck = (value) => {
@@ -108,16 +107,16 @@ const bmiCategory = () => {
   }
 };
 
-const sizeInputCheck = (value) => {
+const heightInputCheck = (value) => {
   if (value < 100 || value > 230) {
-    errorDisplay("size", "The size must be between 100 and 230 cm.");
+    errorDisplay("height", "The height must be between 100 and 230 cm.");
   } else if (!value.match(/^[0-9]+$/i)) {
-    errorDisplay("size", "Size should only contain numbers");
+    errorDisplay("height", "height should only contain numbers");
   } else {
-    errorDisplay("size", "", true);
+    errorDisplay("height", "", true);
     let valueDiv;
     valueDiv = value / 100;
-    sizeValid = valueDiv;
+    heightValid = valueDiv;
   }
 };
 
@@ -127,8 +126,8 @@ inputs.forEach((input) => {
       case "weight":
         weightInputTake(e.target.value);
         break;
-      case "size":
-        sizeInputTake(e.target.value);
+      case "height":
+        heightInputTake(e.target.value);
         break;
       default:
         null;
@@ -139,30 +138,30 @@ inputs.forEach((input) => {
 resultBtn.addEventListener("click", (e) => {
   e.preventDefault();
   weightInputCheck(weight);
-  sizeInputCheck(size);
-  if (sizeValid && weightValid) {
+  heightInputCheck(height);
+  if (heightValid && weightValid) {
     bmiCalc();
     bmiCategory();
     normalHeight();
     displayBmi();
     emptyValid();
   } else {
-    if (weightInput.value === "" && sizeInput.value === "") {
+    if (weightInput.value === "" && heightInput.value === "") {
       emptyValid();
       resetResult();
       hideResult();
-      errorDisplay("size", "Size cannot be empty");
+      errorDisplay("height", "height cannot be empty");
       errorDisplay("weight", "Weight cannot be empty");
     } else if (weightInput.value === "") {
       emptyValid();
       resetResult();
       hideResult();
       errorDisplay("weight", "Weight cannot be empty");
-    } else if (sizeInput.value === "") {
+    } else if (heightInput.value === "") {
       emptyValid();
       resetResult();
       hideResult();
-      errorDisplay("size", "Size cannot be empty");
+      errorDisplay("height", "height cannot be empty");
     } else {
       emptyValid();
       resetResult();
