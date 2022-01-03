@@ -114,6 +114,7 @@ label {
   border: white 2px solid;
   color: white;
   background: black;
+  cursor: pointer;
 }
 
 .resultContainer {
